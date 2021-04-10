@@ -56,5 +56,5 @@ volumes:
 
 networks: 
   default:
-    name: qwerty
+    name: chimera-net
 

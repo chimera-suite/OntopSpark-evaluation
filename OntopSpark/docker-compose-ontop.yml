@@ -17,4 +17,4 @@ services:
 networks:
   default:
     external:
-      name: qwerty
+      name: chimera-net

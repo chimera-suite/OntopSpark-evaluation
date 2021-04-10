@@ -3,7 +3,7 @@
     {
       "text": "import net.sansa_stack.query.spark.query._\n\nval queryFile \u003d \"hdfs://namenode:8020/data/queries/Q1.sparql\"\nval configFile  \u003d \"hdfs://namenode:8020/data/config_csv-only\"\nval mappingsFile \u003d \"hdfs://namenode:8020/data/mappings_csv-only.ttl\"\n\n\nval result \u003d spark.time(spark.sparqlDL(queryFile, mappingsFile, configFile))\n\nz.show(result)",
       "user": "anonymous",
-      "dateUpdated": "2021-04-09 17:45:00.929",
+      "dateUpdated": "2021-04-10 14:00:57.612",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -55,7 +55,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q1.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT DISTINCT ?label ?value\nWHERE {\n    ?product rdfs:label ?label .\n    ?product bsbm:productPropertyNumeric1 ?value .\n    ?product rdf:type bsbm:Product .\n    ?product bsbm:producer ?producer .\n    ?producer rdf:type bsbm:Producer .\n    ?producer foaf:homepage ?hp .\n    ?review bsbm:reviewFor ?product .\n    ?review rdf:type schema:Review .\n    ?review rev:reviewer ?pers .\n    ?pers foaf:name ?fn .\n    ?pers edm:country ?cn .\n    ?offer bsbm:product ?product .\n    ?offer rdf:type schema:Offer .\n    FILTER (?value \u003e 102)\n}\nORDER BY ?label\nLIMIT 10\n\nproduct_productPropertyNumeric1_bsbm,product_label_rdfs\n[834,\u0027vacillator mortifying\u0027]\n[1900,\u0027tither pettiness\u0027]\n[1743,\u0027resettling uncoagulated lowish\u0027]\n[940,\u0027reexhibit wrang tarts\u0027]\n[1504,\u0027procreators taiwanese antigene\u0027]\n[831,\u0027manner gatemen\u0027]\n[133,\u0027lignites rallying specters\u0027]\n[374,\u0027desolates waging reveilles\u0027]\n[1891,\u0027coterie\u0027]\n[594,\u0027ahchoo\u0027]\nNumber of results: 10\nTime taken: 2010 ms\nresult: org.apache.spark.sql.DataFrame \u003d [product_productPropertyNumeric1_bsbm: string, product_label_rdfs: string]\n"
+            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q1.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT DISTINCT ?label ?value\nWHERE {\n    ?product rdfs:label ?label .\n    ?product bsbm:productPropertyNumeric1 ?value .\n    ?product rdf:type bsbm:Product .\n    ?product bsbm:producer ?producer .\n    ?producer rdf:type bsbm:Producer .\n    ?producer foaf:homepage ?hp .\n    ?review bsbm:reviewFor ?product .\n    ?review rdf:type schema:Review .\n    ?review rev:reviewer ?pers .\n    ?pers foaf:name ?fn .\n    ?pers edm:country ?cn .\n    ?offer bsbm:product ?product .\n    ?offer rdf:type schema:Offer .\n    FILTER (?value \u003e 102)\n}\nORDER BY ?label\nLIMIT 10\n\nproduct_productPropertyNumeric1_bsbm,product_label_rdfs\n[834,\u0027vacillator mortifying\u0027]\n[1900,\u0027tither pettiness\u0027]\n[1743,\u0027resettling uncoagulated lowish\u0027]\n[940,\u0027reexhibit wrang tarts\u0027]\n[1504,\u0027procreators taiwanese antigene\u0027]\n[831,\u0027manner gatemen\u0027]\n[133,\u0027lignites rallying specters\u0027]\n[374,\u0027desolates waging reveilles\u0027]\n[1891,\u0027coterie\u0027]\n[594,\u0027ahchoo\u0027]\nNumber of results: 10\nTime taken: 3019 ms\nresult: org.apache.spark.sql.DataFrame \u003d [product_productPropertyNumeric1_bsbm: string, product_label_rdfs: string]\n"
           },
           {
             "type": "TABLE",
@@ -70,33 +70,33 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d135",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d136",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d137",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d138",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d139",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d140",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d141",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d142",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d143",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d144",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d145",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d146",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d147",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d148",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d149",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d150",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d151",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d152",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d153",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d154",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d155",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d156",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d157",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d158",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d159",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d160",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d161"
+            "http://64151553a5cf:4040/jobs/job?id\u003d27",
+            "http://64151553a5cf:4040/jobs/job?id\u003d28",
+            "http://64151553a5cf:4040/jobs/job?id\u003d29",
+            "http://64151553a5cf:4040/jobs/job?id\u003d30",
+            "http://64151553a5cf:4040/jobs/job?id\u003d31",
+            "http://64151553a5cf:4040/jobs/job?id\u003d32",
+            "http://64151553a5cf:4040/jobs/job?id\u003d33",
+            "http://64151553a5cf:4040/jobs/job?id\u003d34",
+            "http://64151553a5cf:4040/jobs/job?id\u003d35",
+            "http://64151553a5cf:4040/jobs/job?id\u003d36",
+            "http://64151553a5cf:4040/jobs/job?id\u003d37",
+            "http://64151553a5cf:4040/jobs/job?id\u003d38",
+            "http://64151553a5cf:4040/jobs/job?id\u003d39",
+            "http://64151553a5cf:4040/jobs/job?id\u003d40",
+            "http://64151553a5cf:4040/jobs/job?id\u003d41",
+            "http://64151553a5cf:4040/jobs/job?id\u003d42",
+            "http://64151553a5cf:4040/jobs/job?id\u003d43",
+            "http://64151553a5cf:4040/jobs/job?id\u003d44",
+            "http://64151553a5cf:4040/jobs/job?id\u003d45",
+            "http://64151553a5cf:4040/jobs/job?id\u003d46",
+            "http://64151553a5cf:4040/jobs/job?id\u003d47",
+            "http://64151553a5cf:4040/jobs/job?id\u003d48",
+            "http://64151553a5cf:4040/jobs/job?id\u003d49",
+            "http://64151553a5cf:4040/jobs/job?id\u003d50",
+            "http://64151553a5cf:4040/jobs/job?id\u003d51",
+            "http://64151553a5cf:4040/jobs/job?id\u003d52",
+            "http://64151553a5cf:4040/jobs/job?id\u003d53"
           ],
           "interpreterSettingId": "spark"
         }
@@ -105,8 +105,8 @@
       "jobName": "paragraph_1617985075751_-67143816",
       "id": "20210409-161755_1599616412",
       "dateCreated": "2021-04-09 16:17:55.751",
-      "dateStarted": "2021-04-09 17:45:00.962",
-      "dateFinished": "2021-04-09 17:45:04.600",
+      "dateStarted": "2021-04-10 14:00:57.676",
+      "dateFinished": "2021-04-10 14:01:03.286",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -187,25 +187,6 @@
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d170",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d171",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d172",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d173",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d174",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d175",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d176",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d177"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
       "jobName": "paragraph_1617985097424_-2087378133",
       "id": "20210409-161817_279517816",
@@ -218,7 +199,7 @@
     {
       "text": "import net.sansa_stack.query.spark.query._\n\nval queryFile \u003d \"hdfs://namenode:8020/data/queries/Q3.sparql\"\nval configFile  \u003d \"hdfs://namenode:8020/data/config_csv-only\"\nval mappingsFile \u003d \"hdfs://namenode:8020/data/mappings_csv-only.ttl\"\n\n\nval result \u003d spark.time(spark.sparqlDL(queryFile, mappingsFile, configFile))\n\nz.show(result)",
       "user": "anonymous",
-      "dateUpdated": "2021-04-09 17:45:30.993",
+      "dateUpdated": "2021-04-09 19:55:05.223",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -272,7 +253,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q3.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT ?product ?label ?p1 ?p3\nWHERE {\n    ?product rdfs:label ?label .\n    ?product bsbm:producer ?producer .\n    ?review bsbm:reviewFor ?product .\n    ?review rdf:type schema:Review .\n    ?product bsbm:productPropertyNumeric1 ?p1 .\n    ?product bsbm:productPropertyNumeric3 ?p3 .\n    FILTER (?p1 \u003e 1800)\n    FILTER (?p3 \u003c 5 )\n}\nORDER BY ?label\nLIMIT 10\n\nproduct_productPropertyNumeric1_bsbm,review_reviewFor_bsbm,product_label_rdfs,product_productPropertyNumeric3_bsbm\nNumber of results: 0\nTime taken: 1119 ms\nresult: org.apache.spark.sql.DataFrame \u003d [product_productPropertyNumeric1_bsbm: string, review_reviewFor_bsbm: string ... 2 more fields]\n"
+            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q3.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT ?product ?label ?p1 ?p3\nWHERE {\n    ?product rdfs:label ?label .\n    ?product bsbm:producer ?producer .\n    ?review bsbm:reviewFor ?product .\n    ?review rdf:type schema:Review .\n    ?product bsbm:productPropertyNumeric1 ?p1 .\n    ?product bsbm:productPropertyNumeric3 ?p3 .\n    FILTER (?p1 \u003e 1800)\n    FILTER (?p3 \u003c 5 )\n}\nORDER BY ?label\nLIMIT 10\n\nproduct_productPropertyNumeric1_bsbm,review_reviewFor_bsbm,product_label_rdfs,product_productPropertyNumeric3_bsbm\nNumber of results: 0\nTime taken: 1754 ms\nresult: org.apache.spark.sql.DataFrame \u003d [product_productPropertyNumeric1_bsbm: string, review_reviewFor_bsbm: string ... 2 more fields]\n"
           },
           {
             "type": "TABLE",
@@ -280,38 +261,19 @@
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d178",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d179",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d180",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d181",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d182",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d183",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d184",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d185"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
       "jobName": "paragraph_1617985123393_1578356205",
       "id": "20210409-161843_49861066",
       "dateCreated": "2021-04-09 16:18:43.393",
-      "dateStarted": "2021-04-09 17:45:31.028",
-      "dateFinished": "2021-04-09 17:45:33.371",
+      "dateStarted": "2021-04-09 19:55:05.263",
+      "dateFinished": "2021-04-09 19:55:08.584",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "import net.sansa_stack.query.spark.query._\n\nval queryFile \u003d \"hdfs://namenode:8020/data/queries/Q4.sparql\"\nval configFile  \u003d \"hdfs://namenode:8020/data/config_csv-only\"\nval mappingsFile \u003d \"hdfs://namenode:8020/data/mappings_csv-only.ttl\"\n\n\nval result \u003d spark.time(spark.sparqlDL(queryFile, mappingsFile, configFile))\n\nz.show(result)",
       "user": "anonymous",
-      "dateUpdated": "2021-04-09 17:45:47.609",
+      "dateUpdated": "2021-04-09 19:55:14.529",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -365,7 +327,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q4.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT DISTINCT ?label ?c ?propertyTextual ?p1\nWHERE {\n    ?product rdfs:label ?label .\n    ?product bsbm:producer ?pcr .\n    ?pcr edm:country ?c .\n    ?pcr foaf:homepage ?h .\n    ?offer gr:validFrom ?vf .\n    ?offer bsbm:product ?product .\n    ?review bsbm:reviewFor ?product .\n    ?review rev:reviewer ?pers .\n    ?pers foaf:name ?fn .\n    ?pers edm:country ?cn .\n    ?product bsbm:productPropertyTextual1 ?propertyTextual .\n    ?product bsbm:productPropertyNumeric1 ?p1 .\n    FILTER (?p1 \u003e 630)\n}\nORDER BY ?label\nLIMIT 10\n\nproduct_productPropertyNumeric1_bsbm,product_label_rdfs,pcr_country_edm,product_productPropertyTextual1_bsbm\n[834,\u0027vacillator mortifying\u0027,DE,\u0027egoisms welterweight friendship topsoiling securer reevaluated proclaimer murker awaiting ferried quinone dengue toxoids\u0027]\n[1900,\u0027tither pettiness\u0027,DE,\u0027solidest incarnation arrayers gruelingly honorands slobs\u0027]\n[1743,\u0027resettling uncoagulated lowish\u0027,DE,\u0027unrestored kneeler chaplet newts deckle vegas overeducating\u0027]\n[940,\u0027reexhibit wrang tarts\u0027,DE,\u0027skinfuls uncertainty craving incas maenades fitfulness mas creditors fixity churchlier assumed routines\u0027]\n[1504,\u0027procreators taiwanese antigene\u0027,DE,\u0027exceptionally replan aiming bedstraws tragically pollutants prefabricating isolation sextets rewarders approvement productive\u0027]\n[831,\u0027manner gatemen\u0027,DE,\u0027guzzling jillion psychotherapists substantiation nonuple deluded snowmelt interlards overrefinement annoyed stuntedness calcimining stereophonically\u0027]\n[1891,\u0027coterie\u0027,DE,\u0027scalded decoct practitioners infolds levered quartan calcined untransferable auditoria\u0027]\nNumber of results: 7\nTime taken: 1863 ms\nresult: org.apache.spark.sql.DataFrame \u003d [product_productPropertyNumeric1_bsbm: string, product_label_rdfs: string ... 2 more fields]\n"
+            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q4.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT DISTINCT ?label ?c ?propertyTextual ?p1\nWHERE {\n    ?product rdfs:label ?label .\n    ?product bsbm:producer ?pcr .\n    ?pcr edm:country ?c .\n    ?pcr foaf:homepage ?h .\n    ?offer gr:validFrom ?vf .\n    ?offer bsbm:product ?product .\n    ?review bsbm:reviewFor ?product .\n    ?review rev:reviewer ?pers .\n    ?pers foaf:name ?fn .\n    ?pers edm:country ?cn .\n    ?product bsbm:productPropertyTextual1 ?propertyTextual .\n    ?product bsbm:productPropertyNumeric1 ?p1 .\n    FILTER (?p1 \u003e 630)\n}\nORDER BY ?label\nLIMIT 10\n\nproduct_productPropertyNumeric1_bsbm,product_label_rdfs,pcr_country_edm,product_productPropertyTextual1_bsbm\n[834,\u0027vacillator mortifying\u0027,DE,\u0027egoisms welterweight friendship topsoiling securer reevaluated proclaimer murker awaiting ferried quinone dengue toxoids\u0027]\n[1900,\u0027tither pettiness\u0027,DE,\u0027solidest incarnation arrayers gruelingly honorands slobs\u0027]\n[1743,\u0027resettling uncoagulated lowish\u0027,DE,\u0027unrestored kneeler chaplet newts deckle vegas overeducating\u0027]\n[940,\u0027reexhibit wrang tarts\u0027,DE,\u0027skinfuls uncertainty craving incas maenades fitfulness mas creditors fixity churchlier assumed routines\u0027]\n[1504,\u0027procreators taiwanese antigene\u0027,DE,\u0027exceptionally replan aiming bedstraws tragically pollutants prefabricating isolation sextets rewarders approvement productive\u0027]\n[831,\u0027manner gatemen\u0027,DE,\u0027guzzling jillion psychotherapists substantiation nonuple deluded snowmelt interlards overrefinement annoyed stuntedness calcimining stereophonically\u0027]\n[1891,\u0027coterie\u0027,DE,\u0027scalded decoct practitioners infolds levered quartan calcined untransferable auditoria\u0027]\nNumber of results: 7\nTime taken: 2954 ms\nresult: org.apache.spark.sql.DataFrame \u003d [product_productPropertyNumeric1_bsbm: string, product_label_rdfs: string ... 2 more fields]\n"
           },
           {
             "type": "TABLE",
@@ -373,50 +335,12 @@
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d213",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d214",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d215",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d216",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d217",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d218",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d219",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d220",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d221",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d222",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d223",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d224",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d225",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d226",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d227",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d228",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d229",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d230",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d231",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d232",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d233",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d234",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d235",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d236",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d237",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d238",
-            "http://aa39fe8f6901:4040/jobs/job?id\u003d239"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
       "jobName": "paragraph_1617985188511_1132740312",
       "id": "20210409-161948_730345570",
       "dateCreated": "2021-04-09 16:19:48.511",
-      "dateStarted": "2021-04-09 17:45:47.650",
-      "dateFinished": "2021-04-09 17:45:51.154",
+      "dateStarted": "2021-04-09 19:55:14.604",
+      "dateFinished": "2021-04-09 19:55:19.601",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -567,7 +491,7 @@
     {
       "text": "import net.sansa_stack.query.spark.query._\n\nval queryFile \u003d \"hdfs://namenode:8020/data/queries/Q7.sparql\"\nval configFile  \u003d \"hdfs://namenode:8020/data/config_csv-only\"\nval mappingsFile \u003d \"hdfs://namenode:8020/data/mappings_csv-only.ttl\"\n\n\nval result \u003d spark.time(spark.sparqlDL(queryFile, mappingsFile, configFile))\n\nz.show(result)",
       "user": "anonymous",
-      "dateUpdated": "2021-04-09 16:36:40.151",
+      "dateUpdated": "2021-04-09 19:55:33.612",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -627,7 +551,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q7.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT ?productLabel ?price ?vendor ?revTitle\n?reviewer ?rating1 ?rating2 ?product ?revName\nWHERE {\n    ?product rdfs:label ?productLabel .\n    ?product rdf:type bsbm:Product .\n    ?offer bsbm:product ?product .\n    ?offer bsbm:price ?price .\n    ?offer bsbm:vendor ?vendor .\n    ?offer bsbm:validTo ?date .\n    ?review bsbm:reviewFor ?product .\n    ?review rev:reviewer ?reviewer .\n    ?review dc:title ?revTitle .\n    ?review bsbm:rating1 ?rating1 .\n    ?review bsbm:rating2 ?rating2 .\n    ?reviewer foaf:name ?revName .\n    ?reviewer a foaf:Person .\n    FILTER (?price \u003e 5000)\n    FILTER (?product \u003d 9)\n}\n\nreview_rating1_bsbm,review_title_dc,reviewer_name_foaf,offer_price_bsbm,review_rating2_bsbm,review_reviewFor_bsbm,product_label_rdfs,review_reviewer_rev,offer_product_bsbm,offer_vendor_bsbm\n[8,\u0027footworn forms nonflammable abator editorialize skinhead ekistics rebate flashier pressing\u0027,\u0027Przemek-Berte\u0027,8092.71,5,9,\u0027procreators taiwanese antigene\u0027,5,9,1]\n[2,\u0027affirmance subagency diptych donne tipoffs roped paganists\u0027,\u0027Allegra-Walburga\u0027,8092.71,3,9,\u0027procreators taiwanese antigene\u0027,4,9,1]\n[-1,\u0027heehawed underway knickers scroungier hypnotism sowbellies dugs pangs excrescences rockworks\u0027,\u0027Danijela-Adalbrand\u0027,8092.71,4,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[-1,\u0027recharting wardrobes divvies rhetorics phantasies lineate yews swilling resorters cluttering mannerisms architecure flense\u0027,\u0027Danijela-Adalbrand\u0027,8092.71,4,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[7,\u0027improves pervertedly kevils canneries\u0027,\u0027Danijela-Adalbrand\u0027,8092.71,10,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[5,\u0027slavishness muonic unencumbered horsepox vinegars templed spalls unstained panaceas radarscope finites flavored clavicles gibbered congealing\u0027,\u0027Eyana-Aurelianus\u0027,8092.71,10,9,\u0027procreators taiwanese antigene\u0027,2,9,1]\n[8,\u0027footworn forms nonflammable abator editorialize skinhead ekistics rebate flashier pressing\u0027,\u0027Przemek-Berte\u0027,8725.34,5,9,\u0027procreators taiwanese antigene\u0027,5,9,1]\n[2,\u0027affirmance subagency diptych donne tipoffs roped paganists\u0027,\u0027Allegra-Walburga\u0027,8725.34,3,9,\u0027procreators taiwanese antigene\u0027,4,9,1]\n[-1,\u0027heehawed underway knickers scroungier hypnotism sowbellies dugs pangs excrescences rockworks\u0027,\u0027Danijela-Adalbrand\u0027,8725.34,4,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[-1,\u0027recharting wardrobes divvies rhetorics phantasies lineate yews swilling resorters cluttering mannerisms architecure flense\u0027,\u0027Danijela-Adalbrand\u0027,8725.34,4,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[7,\u0027improves pervertedly kevils canneries\u0027,\u0027Danijela-Adalbrand\u0027,8725.34,10,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[5,\u0027slavishness muonic unencumbered horsepox vinegars templed spalls unstained panaceas radarscope finites flavored clavicles gibbered congealing\u0027,\u0027Eyana-Aurelianus\u0027,8725.34,10,9,\u0027procreators taiwanese antigene\u0027,2,9,1]\n[8,\u0027footworn forms nonflammable abator editorialize skinhead ekistics rebate flashier pressing\u0027,\u0027Przemek-Berte\u0027,7269.04,5,9,\u0027procreators taiwanese antigene\u0027,5,9,1]\n[2,\u0027affirmance subagency diptych donne tipoffs roped paganists\u0027,\u0027Allegra-Walburga\u0027,7269.04,3,9,\u0027procreators taiwanese antigene\u0027,4,9,1]\n[-1,\u0027heehawed underway knickers scroungier hypnotism sowbellies dugs pangs excrescences rockworks\u0027,\u0027Danijela-Adalbrand\u0027,7269.04,4,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[-1,\u0027recharting wardrobes divvies rhetorics phantasies lineate yews swilling resorters cluttering mannerisms architecure flense\u0027,\u0027Danijela-Adalbrand\u0027,7269.04,4,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[7,\u0027improves pervertedly kevils canneries\u0027,\u0027Danijela-Adalbrand\u0027,7269.04,10,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[5,\u0027slavishness muonic unencumbered horsepox vinegars templed spalls unstained panaceas radarscope finites flavored clavicles gibbered congealing\u0027,\u0027Eyana-Aurelianus\u0027,7269.04,10,9,\u0027procreators taiwanese antigene\u0027,2,9,1]\n[8,\u0027footworn forms nonflammable abator editorialize skinhead ekistics rebate flashier pressing\u0027,\u0027Przemek-Berte\u0027,6957.79,5,9,\u0027procreators taiwanese antigene\u0027,5,9,1]\n[2,\u0027affirmance subagency diptych donne tipoffs roped paganists\u0027,\u0027Allegra-Walburga\u0027,6957.79,3,9,\u0027procreators taiwanese antigene\u0027,4,9,1]\nNumber of results: 30\nTime taken: 1806 ms\nresult: org.apache.spark.sql.DataFrame \u003d [review_rating1_bsbm: string, review_title_dc: string ... 8 more fields]\n"
+            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q7.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT ?productLabel ?price ?vendor ?revTitle\n?reviewer ?rating1 ?rating2 ?product ?revName\nWHERE {\n    ?product rdfs:label ?productLabel .\n    ?product rdf:type bsbm:Product .\n    ?offer bsbm:product ?product .\n    ?offer bsbm:price ?price .\n    ?offer bsbm:vendor ?vendor .\n    ?offer bsbm:validTo ?date .\n    ?review bsbm:reviewFor ?product .\n    ?review rev:reviewer ?reviewer .\n    ?review dc:title ?revTitle .\n    ?review bsbm:rating1 ?rating1 .\n    ?review bsbm:rating2 ?rating2 .\n    ?reviewer foaf:name ?revName .\n    ?reviewer a foaf:Person .\n    FILTER (?price \u003e 5000)\n    FILTER (?product \u003d 9)\n}\n\nreview_rating1_bsbm,review_title_dc,reviewer_name_foaf,offer_price_bsbm,review_rating2_bsbm,review_reviewFor_bsbm,product_label_rdfs,review_reviewer_rev,offer_product_bsbm,offer_vendor_bsbm\n[8,\u0027footworn forms nonflammable abator editorialize skinhead ekistics rebate flashier pressing\u0027,\u0027Przemek-Berte\u0027,8092.71,5,9,\u0027procreators taiwanese antigene\u0027,5,9,1]\n[2,\u0027affirmance subagency diptych donne tipoffs roped paganists\u0027,\u0027Allegra-Walburga\u0027,8092.71,3,9,\u0027procreators taiwanese antigene\u0027,4,9,1]\n[-1,\u0027heehawed underway knickers scroungier hypnotism sowbellies dugs pangs excrescences rockworks\u0027,\u0027Danijela-Adalbrand\u0027,8092.71,4,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[-1,\u0027recharting wardrobes divvies rhetorics phantasies lineate yews swilling resorters cluttering mannerisms architecure flense\u0027,\u0027Danijela-Adalbrand\u0027,8092.71,4,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[7,\u0027improves pervertedly kevils canneries\u0027,\u0027Danijela-Adalbrand\u0027,8092.71,10,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[5,\u0027slavishness muonic unencumbered horsepox vinegars templed spalls unstained panaceas radarscope finites flavored clavicles gibbered congealing\u0027,\u0027Eyana-Aurelianus\u0027,8092.71,10,9,\u0027procreators taiwanese antigene\u0027,2,9,1]\n[8,\u0027footworn forms nonflammable abator editorialize skinhead ekistics rebate flashier pressing\u0027,\u0027Przemek-Berte\u0027,8725.34,5,9,\u0027procreators taiwanese antigene\u0027,5,9,1]\n[2,\u0027affirmance subagency diptych donne tipoffs roped paganists\u0027,\u0027Allegra-Walburga\u0027,8725.34,3,9,\u0027procreators taiwanese antigene\u0027,4,9,1]\n[-1,\u0027heehawed underway knickers scroungier hypnotism sowbellies dugs pangs excrescences rockworks\u0027,\u0027Danijela-Adalbrand\u0027,8725.34,4,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[-1,\u0027recharting wardrobes divvies rhetorics phantasies lineate yews swilling resorters cluttering mannerisms architecure flense\u0027,\u0027Danijela-Adalbrand\u0027,8725.34,4,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[7,\u0027improves pervertedly kevils canneries\u0027,\u0027Danijela-Adalbrand\u0027,8725.34,10,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[5,\u0027slavishness muonic unencumbered horsepox vinegars templed spalls unstained panaceas radarscope finites flavored clavicles gibbered congealing\u0027,\u0027Eyana-Aurelianus\u0027,8725.34,10,9,\u0027procreators taiwanese antigene\u0027,2,9,1]\n[8,\u0027footworn forms nonflammable abator editorialize skinhead ekistics rebate flashier pressing\u0027,\u0027Przemek-Berte\u0027,7269.04,5,9,\u0027procreators taiwanese antigene\u0027,5,9,1]\n[2,\u0027affirmance subagency diptych donne tipoffs roped paganists\u0027,\u0027Allegra-Walburga\u0027,7269.04,3,9,\u0027procreators taiwanese antigene\u0027,4,9,1]\n[-1,\u0027heehawed underway knickers scroungier hypnotism sowbellies dugs pangs excrescences rockworks\u0027,\u0027Danijela-Adalbrand\u0027,7269.04,4,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[-1,\u0027recharting wardrobes divvies rhetorics phantasies lineate yews swilling resorters cluttering mannerisms architecure flense\u0027,\u0027Danijela-Adalbrand\u0027,7269.04,4,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[7,\u0027improves pervertedly kevils canneries\u0027,\u0027Danijela-Adalbrand\u0027,7269.04,10,9,\u0027procreators taiwanese antigene\u0027,3,9,1]\n[5,\u0027slavishness muonic unencumbered horsepox vinegars templed spalls unstained panaceas radarscope finites flavored clavicles gibbered congealing\u0027,\u0027Eyana-Aurelianus\u0027,7269.04,10,9,\u0027procreators taiwanese antigene\u0027,2,9,1]\n[8,\u0027footworn forms nonflammable abator editorialize skinhead ekistics rebate flashier pressing\u0027,\u0027Przemek-Berte\u0027,6957.79,5,9,\u0027procreators taiwanese antigene\u0027,5,9,1]\n[2,\u0027affirmance subagency diptych donne tipoffs roped paganists\u0027,\u0027Allegra-Walburga\u0027,6957.79,3,9,\u0027procreators taiwanese antigene\u0027,4,9,1]\nNumber of results: 30\nTime taken: 2172 ms\nresult: org.apache.spark.sql.DataFrame \u003d [review_rating1_bsbm: string, review_title_dc: string ... 8 more fields]\n"
           },
           {
             "type": "TABLE",
@@ -639,15 +563,15 @@
       "jobName": "paragraph_1617985244632_-103407725",
       "id": "20210409-162044_1275206502",
       "dateCreated": "2021-04-09 16:20:44.632",
-      "dateStarted": "2021-04-09 16:21:14.156",
-      "dateFinished": "2021-04-09 16:21:19.262",
+      "dateStarted": "2021-04-09 19:55:33.668",
+      "dateFinished": "2021-04-09 19:55:37.684",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "import net.sansa_stack.query.spark.query._\n\nval queryFile \u003d \"hdfs://namenode:8020/data/queries/Q8.sparql\"\nval configFile  \u003d \"hdfs://namenode:8020/data/config_csv-only\"\nval mappingsFile \u003d \"hdfs://namenode:8020/data/mappings_csv-only.ttl\"\n\n\nval result \u003d spark.time(spark.sparqlDL(queryFile, mappingsFile, configFile))\n\nz.show(result)",
       "user": "anonymous",
-      "dateUpdated": "2021-04-09 16:21:37.761",
+      "dateUpdated": "2021-04-09 21:55:24.469",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -707,7 +631,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q8.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT DISTINCT ?title ?text ?reviewDate ?reviewer\n                ?reviewerName ?rating1 ?rating2\n                ?rating3 ?rating4 ?product\nWHERE {\n    ?product rdfs:label  ?label .\n    ?product bsbm:productPropertyTextual1 ?pt .\n    ?product bsbm:producer ?producer .\n    ?producer edm:country ?c .\n    ?producer foaf:homepage ?h .\n    ?review bsbm:reviewFor ?product .\n    ?review dc:title ?title .\n    ?review rev:text ?text .\n    ?review bsbm:reviewDate ?reviewDate .\n    ?review rev:reviewer ?reviewer .\n    ?review bsbm:rating1 ?rating1 .\n    ?review bsbm:rating2 ?rating2 .\n    ?review bsbm:rating3 ?rating3 .\n    ?review bsbm:rating4 ?rating4 .\n    ?reviewer foaf:name ?reviewerName .\n    ?reviewer a foaf:Person .\n    FILTER (?product \u003d 9)\n}\nORDER BY DESC(?reviewDate)\nLIMIT 9\n\nreview_rating4_bsbm,review_rating1_bsbm,review_title_dc,reviewer_name_foaf,review_rating2_bsbm,review_reviewFor_bsbm,review_reviewer_rev,review_rating3_bsbm,review_reviewDate_bsbm,review_text_rev\n[8,7,\u0027improves pervertedly kevils canneries\u0027,\u0027Danijela-Adalbrand\u0027,10,9,3,2,2007-11-16,\u0027mapping constructions motiveless stalkier validations tentering lounges anopheles jelled potsy fujis servicer savorer dressage installs magnificoes militancy nasalize tearer rowable lovevines submergible cyan oversimplifications reinjured misdeal furls headgears watermarked cesspits enthrone tooling ironware sensationalist passively expressionist rumors codifications vanillas decompensated oratorian sandbanks faded formable proliferously infiltration foetors heartens chanteuse freeform catching saxhorns grafts celling crinkling unadjudicated neurones postboy shackles procurer rhinos hated steeping incommunicative cervicitis copolymerize atonality zoysia restudying showup inexactitude hillers nimrods leva tokonoma stagnates wisdoms loadstones expatriated faultiest scintilla ungraceful inched brevities unclassifiable adoptions churchier reattached ranged unenterprising subsisting deutsche cussers megabuck behaver depressively overpast baalism pinioning hankerer holdbacks libidinally curies unshelling coliseums smidgen saltires masturbator reacquainted ufo unicellular calendulas cetologies letter nonhabitual precancels simplicities cautiously baseborn tansies gauderies graben shrieks regenerates paralyzes conjunctive folkloric suggestibility vaqueros discriminates pumicing numberable nobler salvagees prized melanists discoverers frangibility opaqued begrudging cranched rupiahs expected obligement liquorice multifunction\u0027]\n[10,-1,\u0027recharting wardrobes divvies rhetorics phantasies lineate yews swilling resorters cluttering mannerisms architecure flense\u0027,\u0027Danijela-Adalbrand\u0027,4,9,3,7,2007-11-16,\u0027moxas clangored haughtier rascals southerly shirred institutionally windsocks laboring copulations deliverer brogan leaseless lunches religionist coached nestler reconciliations jerboa tenderfoots visoring voidance alleviatory polyps abhors aquavits swerves bossisms uncharacteristic bankrolls razorbill impanels problems couther falcons tinier fiches comfiest masterminds sibilation chauvinistic bitting nutting trainload authorizes gnomes miauled localization jammed testatum phonogramically affixer barometers phlegms outbluffed pickax quadroon fistulae loaners whereto superposition insiders saner saturdays federalization nanowatt termites finagles\u0027]\n[1,8,\u0027footworn forms nonflammable abator editorialize skinhead ekistics rebate flashier pressing\u0027,\u0027Przemek-Berte\u0027,5,9,5,2,2007-12-04,\u0027breedings silences respirating litterateurs equivalences addles joes likeness leaseholders assuagement triplicated burgundies anticyclones legendarily darers reenlisting sinistrally tasselling ascetically yashmaks urolith pelletizing roamed obliterative pockier bookman breadstuffs queerly fleshly brandishes insurgency ghosts unturned workless schismatically munched circumcised temporizing chemicals misquotes deferrer latents ingraft rampancies glyptics ultrastructure homonymies forelands wiglet malfunctions unobserved intellects cerises pretest stepdaughters oceanologist flemishes cockhorse aleatory hymnody convertibles nullifying rotated squawkers challengers fatted indolence importuned mellowness hockshops vacating scuttler damsels aidful slobbery aryan sluttishness ambles bullweed defaces sauteing severer dolomites towpaths bedamned codex diminutions appropriateness safeguarded hornbook supremeness layerings audits logrolling intellectuals yogini sestines lores recombed gossipy algicide specifier strikebreaking statutorily gleba stagger chining stymieing pouter semitrailer demurrers splaying\u0027]\n[-1,5,\u0027slavishness muonic unencumbered horsepox vinegars templed spalls unstained panaceas radarscope finites flavored clavicles gibbered congealing\u0027,\u0027Eyana-Aurelianus\u0027,10,9,2,-1,2008-01-14,\u0027philatelist lugubrious unknots hummocky gonged flouring shuffled hadjees lightheartedly screecher botanists toughener airships gorgons gauziest hominoid mothered hooray nabs elucidations sandstones prelimit reinspect putoffs tiled dumbing kindnesses polystyrene bristlier godhood bulldozers engraves decomposed woolly rusted driftway crowsteps diluvion oceanology reconsecrating detoxicator unpretentiously playsuit dicotyledons malleably endocrinologies abstractly berobed cryotherapies cinematically admirably booting evolved threapers maimedness reinsuring hardening failingly indorsing griot misinformed tomahawks frills jehus squatters barbells pygmies mettles quadrics bowyer unstepping snitchers ultramicroscopic filibusterer virginity vivaciously suspenses unscrewing jinnee legalist boluses bustles adjudicature overstrain imbody twelvemos latticed hypoxic instructive\u0027]\n[6,2,\u0027affirmance subagency diptych donne tipoffs roped paganists\u0027,\u0027Allegra-Walburga\u0027,3,9,4,10,2008-01-16,\u0027southwesterners denier bicycles veneers supertaxes testatrixes assister forecastles chaplaincies blenny taskwork bleats montes tyro skyed gomorrah podgier muzzler queans hornless hyperacid gargantua lobules lingering potboilers rufflike alarmingly viaducts niblick cuppa tartly inquisitively mottoes acrimonies bridles raper pennons acres distress fanlight decompressive retinues theoretically flatulency opprobriously underlaid anticipating crassest malled brushup siziness peruvians earthlier internships unscratched confiscated jestful energizing prelims redistilled warbles hennas sentimentalized interrogatively\u0027]\n[9,-1,\u0027heehawed underway knickers scroungier hypnotism sowbellies dugs pangs excrescences rockworks\u0027,\u0027Danijela-Adalbrand\u0027,4,9,3,-1,2008-03-23,\u0027brisker astrophysicists elations chlorines vastier princeliness barristerial snootiness livable slipovers tularemic tambur atomised padishah tissued biotechnology piton adulterating headrest procreative transplanting gainsaying towages entrenchment carefully thatchers postdigestive amebean eggers skirmishes overparticular suboxides pandits mw corsairs akenes birdies electrified empathizing flibbertigibbet unfastened antennas preestablishing internationalize circumlocutory radiotelemetries hotbeds gesso hopper vilifier lexicographer whistlers medullae improvable designment vainest supersedes obnoxiously airfields homering obviates graders decorators shallower pretender periling guffs irregularities bathhouses vaccinotherapy hats estrangement jugula acidifiers quilting openhandedness involuntarily perturbs tiptoed razoring reinters protuberance reties reeked conservatories enormously depicting nutmegs pores bigmouth dotted investigator vocality choleras nonmilitant aluminize activistic squiggle chasuble nomads postulation certainest stooped philtred novena tearstained reframes confirms throstles kinetins semiosis horseflies expositors moronisms gargoyle intercepted presser flaps leasers sinfully recoup clunk shadowgraph tsunamis shocker mummied brasher sullener animas understanding undermanned podgily saleyard optative menstruated flanker slumped disappearing flense thyroidectomized longes podiatrist cornfed caltrops hapless wormier containerize toting garde trigraph chemurgic waistbands agglomerations grunting transients ills dimensions preshapes\u0027]\nNumber of results: 6\nTime taken: 2287 ms\nresult: org.apache.spark.sql.DataFrame \u003d [review_rating4_bsbm: string, review_rating1_bsbm: string ... 8 more fields]\n"
+            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q8.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT DISTINCT ?title ?text ?reviewDate ?reviewer\n                ?reviewerName ?rating1 ?rating2\n                ?rating3 ?rating4 ?product\nWHERE {\n    ?product rdfs:label  ?label .\n    ?product bsbm:productPropertyTextual1 ?pt .\n    ?product bsbm:producer ?producer .\n    ?producer edm:country ?c .\n    ?producer foaf:homepage ?h .\n    ?review bsbm:reviewFor ?product .\n    ?review dc:title ?title .\n    ?review rev:text ?text .\n    ?review bsbm:reviewDate ?reviewDate .\n    ?review rev:reviewer ?reviewer .\n    ?review bsbm:rating1 ?rating1 .\n    ?review bsbm:rating2 ?rating2 .\n    ?review bsbm:rating3 ?rating3 .\n    ?review bsbm:rating4 ?rating4 .\n    ?reviewer foaf:name ?reviewerName .\n    ?reviewer a foaf:Person .\n    FILTER (?product \u003d 9)\n}\nORDER BY DESC(?reviewDate)\nLIMIT 9\n\nreview_rating4_bsbm,review_rating1_bsbm,review_title_dc,reviewer_name_foaf,review_rating2_bsbm,review_reviewFor_bsbm,review_reviewer_rev,review_rating3_bsbm,review_reviewDate_bsbm,review_text_rev\n[8,7,\u0027improves pervertedly kevils canneries\u0027,\u0027Danijela-Adalbrand\u0027,10,9,3,2,2007-11-16,\u0027mapping constructions motiveless stalkier validations tentering lounges anopheles jelled potsy fujis servicer savorer dressage installs magnificoes militancy nasalize tearer rowable lovevines submergible cyan oversimplifications reinjured misdeal furls headgears watermarked cesspits enthrone tooling ironware sensationalist passively expressionist rumors codifications vanillas decompensated oratorian sandbanks faded formable proliferously infiltration foetors heartens chanteuse freeform catching saxhorns grafts celling crinkling unadjudicated neurones postboy shackles procurer rhinos hated steeping incommunicative cervicitis copolymerize atonality zoysia restudying showup inexactitude hillers nimrods leva tokonoma stagnates wisdoms loadstones expatriated faultiest scintilla ungraceful inched brevities unclassifiable adoptions churchier reattached ranged unenterprising subsisting deutsche cussers megabuck behaver depressively overpast baalism pinioning hankerer holdbacks libidinally curies unshelling coliseums smidgen saltires masturbator reacquainted ufo unicellular calendulas cetologies letter nonhabitual precancels simplicities cautiously baseborn tansies gauderies graben shrieks regenerates paralyzes conjunctive folkloric suggestibility vaqueros discriminates pumicing numberable nobler salvagees prized melanists discoverers frangibility opaqued begrudging cranched rupiahs expected obligement liquorice multifunction\u0027]\n[10,-1,\u0027recharting wardrobes divvies rhetorics phantasies lineate yews swilling resorters cluttering mannerisms architecure flense\u0027,\u0027Danijela-Adalbrand\u0027,4,9,3,7,2007-11-16,\u0027moxas clangored haughtier rascals southerly shirred institutionally windsocks laboring copulations deliverer brogan leaseless lunches religionist coached nestler reconciliations jerboa tenderfoots visoring voidance alleviatory polyps abhors aquavits swerves bossisms uncharacteristic bankrolls razorbill impanels problems couther falcons tinier fiches comfiest masterminds sibilation chauvinistic bitting nutting trainload authorizes gnomes miauled localization jammed testatum phonogramically affixer barometers phlegms outbluffed pickax quadroon fistulae loaners whereto superposition insiders saner saturdays federalization nanowatt termites finagles\u0027]\n[1,8,\u0027footworn forms nonflammable abator editorialize skinhead ekistics rebate flashier pressing\u0027,\u0027Przemek-Berte\u0027,5,9,5,2,2007-12-04,\u0027breedings silences respirating litterateurs equivalences addles joes likeness leaseholders assuagement triplicated burgundies anticyclones legendarily darers reenlisting sinistrally tasselling ascetically yashmaks urolith pelletizing roamed obliterative pockier bookman breadstuffs queerly fleshly brandishes insurgency ghosts unturned workless schismatically munched circumcised temporizing chemicals misquotes deferrer latents ingraft rampancies glyptics ultrastructure homonymies forelands wiglet malfunctions unobserved intellects cerises pretest stepdaughters oceanologist flemishes cockhorse aleatory hymnody convertibles nullifying rotated squawkers challengers fatted indolence importuned mellowness hockshops vacating scuttler damsels aidful slobbery aryan sluttishness ambles bullweed defaces sauteing severer dolomites towpaths bedamned codex diminutions appropriateness safeguarded hornbook supremeness layerings audits logrolling intellectuals yogini sestines lores recombed gossipy algicide specifier strikebreaking statutorily gleba stagger chining stymieing pouter semitrailer demurrers splaying\u0027]\n[-1,5,\u0027slavishness muonic unencumbered horsepox vinegars templed spalls unstained panaceas radarscope finites flavored clavicles gibbered congealing\u0027,\u0027Eyana-Aurelianus\u0027,10,9,2,-1,2008-01-14,\u0027philatelist lugubrious unknots hummocky gonged flouring shuffled hadjees lightheartedly screecher botanists toughener airships gorgons gauziest hominoid mothered hooray nabs elucidations sandstones prelimit reinspect putoffs tiled dumbing kindnesses polystyrene bristlier godhood bulldozers engraves decomposed woolly rusted driftway crowsteps diluvion oceanology reconsecrating detoxicator unpretentiously playsuit dicotyledons malleably endocrinologies abstractly berobed cryotherapies cinematically admirably booting evolved threapers maimedness reinsuring hardening failingly indorsing griot misinformed tomahawks frills jehus squatters barbells pygmies mettles quadrics bowyer unstepping snitchers ultramicroscopic filibusterer virginity vivaciously suspenses unscrewing jinnee legalist boluses bustles adjudicature overstrain imbody twelvemos latticed hypoxic instructive\u0027]\n[6,2,\u0027affirmance subagency diptych donne tipoffs roped paganists\u0027,\u0027Allegra-Walburga\u0027,3,9,4,10,2008-01-16,\u0027southwesterners denier bicycles veneers supertaxes testatrixes assister forecastles chaplaincies blenny taskwork bleats montes tyro skyed gomorrah podgier muzzler queans hornless hyperacid gargantua lobules lingering potboilers rufflike alarmingly viaducts niblick cuppa tartly inquisitively mottoes acrimonies bridles raper pennons acres distress fanlight decompressive retinues theoretically flatulency opprobriously underlaid anticipating crassest malled brushup siziness peruvians earthlier internships unscratched confiscated jestful energizing prelims redistilled warbles hennas sentimentalized interrogatively\u0027]\n[9,-1,\u0027heehawed underway knickers scroungier hypnotism sowbellies dugs pangs excrescences rockworks\u0027,\u0027Danijela-Adalbrand\u0027,4,9,3,-1,2008-03-23,\u0027brisker astrophysicists elations chlorines vastier princeliness barristerial snootiness livable slipovers tularemic tambur atomised padishah tissued biotechnology piton adulterating headrest procreative transplanting gainsaying towages entrenchment carefully thatchers postdigestive amebean eggers skirmishes overparticular suboxides pandits mw corsairs akenes birdies electrified empathizing flibbertigibbet unfastened antennas preestablishing internationalize circumlocutory radiotelemetries hotbeds gesso hopper vilifier lexicographer whistlers medullae improvable designment vainest supersedes obnoxiously airfields homering obviates graders decorators shallower pretender periling guffs irregularities bathhouses vaccinotherapy hats estrangement jugula acidifiers quilting openhandedness involuntarily perturbs tiptoed razoring reinters protuberance reties reeked conservatories enormously depicting nutmegs pores bigmouth dotted investigator vocality choleras nonmilitant aluminize activistic squiggle chasuble nomads postulation certainest stooped philtred novena tearstained reframes confirms throstles kinetins semiosis horseflies expositors moronisms gargoyle intercepted presser flaps leasers sinfully recoup clunk shadowgraph tsunamis shocker mummied brasher sullener animas understanding undermanned podgily saleyard optative menstruated flanker slumped disappearing flense thyroidectomized longes podiatrist cornfed caltrops hapless wormier containerize toting garde trigraph chemurgic waistbands agglomerations grunting transients ills dimensions preshapes\u0027]\nNumber of results: 6\nTime taken: 3594 ms\nresult: org.apache.spark.sql.DataFrame \u003d [review_rating4_bsbm: string, review_rating1_bsbm: string ... 8 more fields]\n"
           },
           {
             "type": "TABLE",
@@ -719,15 +643,15 @@
       "jobName": "paragraph_1617985274145_-1217709690",
       "id": "20210409-162114_435452234",
       "dateCreated": "2021-04-09 16:21:14.145",
-      "dateStarted": "2021-04-09 16:21:31.330",
-      "dateFinished": "2021-04-09 16:21:36.264",
+      "dateStarted": "2021-04-09 21:55:24.521",
+      "dateFinished": "2021-04-09 21:55:30.558",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "import net.sansa_stack.query.spark.query._\n\nval queryFile \u003d \"hdfs://namenode:8020/data/queries/Q10.sparql\"\nval configFile  \u003d \"hdfs://namenode:8020/data/config_csv-only\"\nval mappingsFile \u003d \"hdfs://namenode:8020/data/mappings_csv-only.ttl\"\n\n\nval result \u003d spark.time(spark.sparqlDL(queryFile, mappingsFile, configFile))\n\nz.show(result)",
       "user": "anonymous",
-      "dateUpdated": "2021-04-09 16:36:40.272",
+      "dateUpdated": "2021-04-10 14:24:54.559",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -781,7 +705,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q10.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT DISTINCT ?price ?deliveryDays ?date ?c\nWHERE {\n    ?offer bsbm:product ?product .\n    ?offer bsbm:vendor ?vendor .\n    ?offer dc:publisher ?publisher .\n    ?offer bsbm:deliveryDays ?deliveryDays .\n    ?offer bsbm:price ?price .\n    ?offer bsbm:validTo ?date .\n    ?offer bsbm:producer ?producer .\n    ?product rdfs:label  ?label .\n    ?product bsbm:productPropertyTextual5 ?pt .\n    ?producer edm:country ?c .\n    ?producer foaf:homepage ?h .\n    FILTER (?product \u003e 9)\n    FILTER (?deliveryDays \u003c\u003d 7)\n    FILTER (?c \u003d \"DE\" )\n    #FILTER (?date \u003e \"2008-07-02 00:00:00\" )\n}\nORDER BY ?price\nLIMIT 100\n\nproducer_country_edm,offer_deliveryDays_bsbm,offer_validTo_bsbm,offer_price_bsbm\n[DE,4,2008-03-26,9334.06]\n[DE,3,2008-05-31,6790.77]\n[DE,3,2008-05-21,6153.41]\n[DE,2,2008-07-24,272.68]\n[DE,3,2008-06-05,2567.78]\n[DE,4,2008-04-15,2310.46]\nNumber of results: 6\nTime taken: 1405 ms\nresult: org.apache.spark.sql.DataFrame \u003d [producer_country_edm: string, offer_deliveryDays_bsbm: string ... 2 more fields]\n"
+            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q10.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT DISTINCT ?price ?deliveryDays ?date ?c\nWHERE {\n    ?offer bsbm:product ?product .\n    ?offer bsbm:vendor ?vendor .\n    ?offer dc:publisher ?publisher .\n    ?offer bsbm:deliveryDays ?deliveryDays .\n    ?offer bsbm:price ?price .\n    ?offer bsbm:validTo ?date .\n    ?offer bsbm:producer ?producer .\n    ?product rdfs:label  ?label .\n    ?product bsbm:productPropertyTextual5 ?pt .\n    ?producer edm:country ?c .\n    ?producer foaf:homepage ?h .\n    FILTER (?product \u003e 9)\n    FILTER (?deliveryDays \u003c\u003d 7)\n    FILTER (?c \u003d \"DE\" )\n    #FILTER (?date \u003e \"2008-07-02 00:00:00\" )\n}\nORDER BY ?price\nLIMIT 10\n\nproducer_country_edm,offer_deliveryDays_bsbm,offer_validTo_bsbm,offer_price_bsbm\n[DE,4,2008-03-26,9334.06]\n[DE,3,2008-05-31,6790.77]\n[DE,3,2008-05-21,6153.41]\n[DE,2,2008-07-24,272.68]\n[DE,3,2008-06-05,2567.78]\n[DE,4,2008-04-15,2310.46]\nNumber of results: 6\nTime taken: 1594 ms\nresult: org.apache.spark.sql.DataFrame \u003d [producer_country_edm: string, offer_deliveryDays_bsbm: string ... 2 more fields]\n"
           },
           {
             "type": "TABLE",
@@ -789,13 +713,104 @@
           }
         ]
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://64151553a5cf:4040/jobs/job?id\u003d97",
+            "http://64151553a5cf:4040/jobs/job?id\u003d98",
+            "http://64151553a5cf:4040/jobs/job?id\u003d99",
+            "http://64151553a5cf:4040/jobs/job?id\u003d100",
+            "http://64151553a5cf:4040/jobs/job?id\u003d101",
+            "http://64151553a5cf:4040/jobs/job?id\u003d102",
+            "http://64151553a5cf:4040/jobs/job?id\u003d103",
+            "http://64151553a5cf:4040/jobs/job?id\u003d104",
+            "http://64151553a5cf:4040/jobs/job?id\u003d105",
+            "http://64151553a5cf:4040/jobs/job?id\u003d106",
+            "http://64151553a5cf:4040/jobs/job?id\u003d107",
+            "http://64151553a5cf:4040/jobs/job?id\u003d108",
+            "http://64151553a5cf:4040/jobs/job?id\u003d109",
+            "http://64151553a5cf:4040/jobs/job?id\u003d110",
+            "http://64151553a5cf:4040/jobs/job?id\u003d111",
+            "http://64151553a5cf:4040/jobs/job?id\u003d112",
+            "http://64151553a5cf:4040/jobs/job?id\u003d113",
+            "http://64151553a5cf:4040/jobs/job?id\u003d114",
+            "http://64151553a5cf:4040/jobs/job?id\u003d115"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "apps": [],
       "jobName": "paragraph_1617985291315_-370642040",
       "id": "20210409-162131_428637634",
       "dateCreated": "2021-04-09 16:21:31.315",
-      "dateStarted": "2021-04-09 16:22:06.137",
-      "dateFinished": "2021-04-09 16:22:10.103",
+      "dateStarted": "2021-04-10 14:24:54.610",
+      "dateFinished": "2021-04-10 14:24:57.998",
       "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import net.sansa_stack.query.spark.query._\n\nval queryFile \u003d \"hdfs://namenode:8020/data/queries/entailment_regime.sparql\"\nval configFile  \u003d \"hdfs://namenode:8020/data/config_csv-only\"\nval mappingsFile \u003d \"hdfs://namenode:8020/data/mappings_csv-only.ttl\"\n\n\nval result \u003d spark.time(spark.sparqlDL(queryFile, mappingsFile, configFile))\n\nz.show(result)",
+      "user": "anonymous",
+      "dateUpdated": "2021-04-10 14:27:56.341",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "s_productPropertyTextual5_bsbm": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/entailment_regime.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nSELECT ?s ?p ?o\nWHERE {\n    ?s ?p ?o\n}\n\njava.util.NoSuchElementException: key not found: (?s,\u003c?p\u003e)\n  at scala.collection.MapLike$class.default(MapLike.scala:228)\n  at scala.collection.AbstractMap.default(Map.scala:59)\n  at scala.collection.mutable.HashMap.apply(HashMap.scala:65)\n  at net.sansa_stack.datalake.spark.utils.Helpers$$anonfun$getSelectColumnsFromSet$1.apply(Helpers.scala:91)\n  at net.sansa_stack.datalake.spark.utils.Helpers$$anonfun$getSelectColumnsFromSet$1.apply(Helpers.scala:83)\n  at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:99)\n  at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:99)\n  at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:230)\n  at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:40)\n  at scala.collection.mutable.HashMap.foreach(HashMap.scala:99)\n  at net.sansa_stack.datalake.spark.utils.Helpers$.getSelectColumnsFromSet(Helpers.scala:83)\n  at net.sansa_stack.datalake.spark.SparkExecutor$$anonfun$query$1.apply(SparkExecutor.scala:60)\n  at net.sansa_stack.datalake.spark.SparkExecutor$$anonfun$query$1.apply(SparkExecutor.scala:47)\n  at scala.collection.mutable.HashSet.foreach(HashSet.scala:78)\n  at net.sansa_stack.datalake.spark.SparkExecutor.query(SparkExecutor.scala:47)\n  at net.sansa_stack.datalake.spark.Run$$anonfun$application$2.apply(Run.scala:243)\n  at net.sansa_stack.datalake.spark.Run$$anonfun$application$2.apply(Run.scala:142)\n  at scala.collection.mutable.HashSet.foreach(HashSet.scala:78)\n  at net.sansa_stack.datalake.spark.Run.application(Run.scala:142)\n  at net.sansa_stack.query.spark.datalake.DataLakeEngine$.run(DataLakeEngine.scala:21)\n  at net.sansa_stack.query.spark.query.package$DataLake.sparqlDL(package.scala:112)\n  at $anonfun$1.apply(\u003cconsole\u003e:71)\n  at $anonfun$1.apply(\u003cconsole\u003e:71)\n  at org.apache.spark.sql.SparkSession.time(SparkSession.scala:676)\n  ... 80 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1617985312416_692159077",
+      "id": "20210409-162152_1524333505",
+      "dateCreated": "2021-04-09 16:21:52.417",
+      "dateStarted": "2021-04-10 14:27:56.357",
+      "dateFinished": "2021-04-10 14:27:57.624",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -806,9 +821,9 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1617985312416_692159077",
-      "id": "20210409-162152_1524333505",
-      "dateCreated": "2021-04-09 16:21:52.417",
+      "jobName": "paragraph_1618063509472_235991093",
+      "id": "20210410-140509_1774227238",
+      "dateCreated": "2021-04-10 14:05:09.472",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
