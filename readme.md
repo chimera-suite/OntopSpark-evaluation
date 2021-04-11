@@ -23,8 +23,8 @@ Since OntopSpark needs an ontology representing the semantic structure of the da
 | __Q7__ | 10 COL (30 rows) |
 | __Q8__ | 11 COL (6 rows) |
 | __Q10__ | 4 COL (6 rows) |
-| __FREE<br> ?subj ?pred__ | 2 COL (563 rows) | not possible | XXX sec |  |
-| __ENTAILMENT<br> REGIME (1 run)__ | 3 COL (5091 rows) | not possible | XXX sec | (2) |
+| __free_subj_pred__ | 2 COL (563 rows) | not possible | XXX sec |  |
+| __entailment_regime__<br>(single run) | 3 COL (5091 rows) | not possible | XXX sec | (2) |
 
 __(1)__ the __regex()__ operator is not implemented in OntopSpark
 
