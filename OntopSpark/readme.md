@@ -2,37 +2,56 @@
 
 ## Setup
 
-Start the docker containers
-```
-sudo docker-compose -f docker-compose-hive.yml up
+1. Start Hive
 
-sudo docker-compose -f docker-compose-spark.yml up
-```
+  ```
+  sudo docker-compose -f docker-compose-hive.yml up
+  ```
 
-Load the data into HDFS
-```
-sudo docker exec -it namenode /bin/bash
+2. Wait Hive initialization (a couple of minutes), then start Apache Spark
 
-hadoop fs -copyFromLocal dataset /
+  ```
+  sudo docker-compose -f docker-compose-spark.yml up
+  ```
 
-hadoop fs -ls /dataset
-```
+3. Load the data into HDFS
 
-Load the tables definition into Spark
-```
-sudo docker exec -it thriftserver /bin/bash
+  ```
+  sudo docker exec -it namenode /bin/bash
 
-/spark/bin/spark-sql -f /tables.sql
-```
+  hadoop fs -copyFromLocal dataset /
 
-Start OntopSpark
-```
-sudo docker-compose -f docker-compose-ontop.yml up
-```
+  hadoop fs -ls /dataset
+  ```
 
-You can now run the queries located in `/datalake/queries`
+4. Load the tables definition into Spark
 
-# Performance evaluation
+  ```
+  sudo docker exec -it thriftserver /bin/bash
 
+  /spark/bin/spark-sql -f /tables.sql
+  ```
 
-TODO: fix OntopSpark version before running tests
+5. Start OntopSpark
+  ```
+  sudo docker-compose -f docker-compose-ontop.yml up
+  ```
+
+6. Start Jupyter notebook
+
+  ```
+  sudo docker-compose -f docker-compose-jupyter.yml up
+  ```
+  It is possible to access the Jupyter web interface using the links printed out from the terminal, which have the  access token already integrated. For example, if you have this terminal output:
+
+  ```
+  jupyter    |     To access the notebook, open this file in a browser:
+  jupyter    |         file:///home/jovyan/.local/share/jupyter/runtime/nbserver-6-open.html
+  jupyter    |     Or copy and paste one of these URLs:
+  jupyter    |         http://jupyter:8888/?token=8d16d76366b3e11448795a4521fd38ab6b17afbb3d91787a
+  jupyter    |      or http://127.0.0.1:8888/?token=8d16d76366b3e11448795a4521fd38ab6b17afbb3d91787a
+  ```
+
+  You can copypaste the last link (ex:`http://127.0.0.1:8888/?token=8d16d76366b3e11448795a4521fd38ab6b17afbb3d91787a`) on  your browser to access the jupyter notebook web UI (`127.0.0.1` means `localhost`).
+
+  You can now upload the `OntopSpark-evaluation.ipynb` notebook using the WebUI and run the performace tests.

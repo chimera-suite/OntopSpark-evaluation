@@ -1,0 +1,6 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?subj ?pred
+WHERE {
+    ?subj ?pred "1"^^xsd:int.
+}
