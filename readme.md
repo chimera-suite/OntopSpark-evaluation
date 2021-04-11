@@ -15,7 +15,7 @@ Since OntopSpark needs an ontology representing the semantic structure of the da
 |  | Expected output | Sparklify time | OntopSpark time | Notes |
 |--|---------------|------------------|-----------------|-------|
 | __Q1__ | 2 COL (6 rows) |
-| __Q2__ | 10 COL (200 rows) |
+| __Q2__ | 12 COL (200 rows) |
 | __Q3__ | 4 COL (0 rows) |
 | __Q4__ | 4 COL (7 rows) |
 | __Q5__ | 3 COL (0 rows) |
