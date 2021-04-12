@@ -24,7 +24,7 @@ services:
 
 # -------------------- SPARK THRIFTSERVER --------------------
   thriftserver:
-    image: chimerasuite/thriftserver:4C6G
+    image: chimerasuite/thriftserver:3.0.1-hadoop3.2
     hostname: thriftserver
     container_name: thriftserver
     depends_on:
@@ -34,8 +34,8 @@ services:
     environment:
       - "SPARK_MASTER=spark-master:7077"
       - "TOTAL_EXECUTOR_CORES=4"
-      - "EXECUTOR_MEMORY=8G"
-      - "DRIVER_MAX_RESULT_SIZE=5g"
+      - "EXECUTOR_MEMORY=3G"
+      - "DRIVER_MAX_RESULT_SIZE=3g"
       - "HADOOP_CONF_DIR=/spark/conf/hive-site.xml"
     volumes: 
       - "./spark/conf/hive-site.xml:/spark/conf/hive-site.xml"
