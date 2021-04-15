@@ -14,17 +14,17 @@ Since OntopSpark needs an ontology representing the semantic structure of the da
 
 |  | Expected output | Squerall time | OntopSpark time | Notes |
 |--|---------------|------------------|-----------------|-------|
-| __Q1__ | 2 COL (6 rows) |
-| __Q2__ | 12 COL (200 rows) |
-| __Q3__ | 4 COL (0 rows) |
-| __Q4__ | 4 COL (7 rows) |
-| __Q5__ | 3 COL (0 rows) |
-| __Q6__ | 1 COL (0 rows) | | not possible | (1)|
-| __Q7__ | 10 COL (30 rows) |
-| __Q8__ | 11 COL (6 rows) |
-| __Q10__ | 4 COL (6 rows) |
-| __free_subj_pred__ | 2 COL (563 rows) | not possible | XXX sec |  |
-| __entailment_regime__<br>(single run) | 3 COL (5091 rows) | not possible | XXX sec | (2) |
+| __Q1__ | 2 COL (6 rows) | 2122 ms | 2147 ms |
+| __Q2__ | 12 COL (200 rows) | 673 ms | 1913 ms |
+| __Q3__ | 4 COL (0 rows) | 711 ms | 1018 ms |
+| __Q4__ | 4 COL (7 rows) | 1533 ms | 1379 ms |
+| __Q5__ | 3 COL (0 rows) | 988 ms | 925 ms |
+| __Q6__ | 1 COL (0 rows) | 823 ms | not possible | (1)|
+| __Q7__ | 10 COL (30 rows) | 1231 ms | 1188 ms |
+| __Q8__ | 11 COL (6 rows) | 1613 ms | 1284 ms |
+| __Q10__ | 4 COL (6 rows) | 1142 ms | not possible |
+| __free_subj_pred__ | 2 COL (563 rows) | not possible | 12746 ms |  |
+| __entailment_regime__<br>(single run) | 3 COL (5091 rows) | not possible | 201 sec | (2) |
 
 __(1)__ the __regex()__ operator is not implemented in OntopSpark
 
