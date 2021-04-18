@@ -23,8 +23,8 @@ Since OntopSpark needs an ontology representing the semantic structure of the da
 | __Q7__ | 10 COL (30 rows) | 1231 ms | 1188 ms |
 | __Q8__ | 11 COL (6 rows) | 1613 ms | 1284 ms |
 | __Q10__ | 4 COL (6 rows) | 1142 ms | not possible |
-| __free_subj_pred__ | 2 COL (563 rows) | not possible | 12746 ms |  |
-| __entailment_regime__<br>(single run) | 3 COL (5091 rows) | not possible | 201 sec | (2) |
+| __?S_?P__ | 2 COL (563 rows) | not possible | 12746 ms |  |
+| __?S_?P_?O__ | 3 COL (5091 rows) | not possible | 183374 ms | (2) |
 
 __(1)__ the __regex()__ operator is not implemented in OntopSpark
 
