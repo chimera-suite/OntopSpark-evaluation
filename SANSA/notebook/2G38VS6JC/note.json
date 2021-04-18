@@ -3,7 +3,7 @@
     {
       "text": "import net.sansa_stack.query.spark.query._\n\nval queryFile \u003d \"hdfs://namenode:8020/data/queries/Q1.sparql\"\nval configFile  \u003d \"hdfs://namenode:8020/data/config_csv-only\"\nval mappingsFile \u003d \"hdfs://namenode:8020/data/mappings_csv-only.ttl\"\n\n\nval result \u003d spark.time(spark.sparqlDL(queryFile, mappingsFile, configFile))\n\nz.show(result)",
       "user": "anonymous",
-      "dateUpdated": "2021-04-11 16:40:53.518",
+      "dateUpdated": "2021-04-18 14:29:03.093",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -55,7 +55,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q1.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT DISTINCT ?label ?value\nWHERE {\n    ?product rdfs:label ?label .\n    ?product bsbm:productPropertyNumeric1 ?value .\n    ?product rdf:type bsbm:Product .\n    ?product bsbm:producer ?producer .\n    ?producer rdf:type bsbm:Producer .\n    ?producer foaf:homepage ?hp .\n    ?review bsbm:reviewFor ?product .\n    ?review rdf:type schema:Review .\n    ?review rev:reviewer ?pers .\n    ?pers foaf:name ?fn .\n    ?pers edm:country ?cn .\n    ?offer bsbm:product ?product .\n    ?offer rdf:type schema:Offer .\n    FILTER (?value \u003e 102)\n}\nORDER BY ?label\nLIMIT 10\n\nproduct_productPropertyNumeric1_bsbm,product_label_rdfs\n[834,\u0027vacillator mortifying\u0027]\n[1900,\u0027tither pettiness\u0027]\n[1743,\u0027resettling uncoagulated lowish\u0027]\n[940,\u0027reexhibit wrang tarts\u0027]\n[1504,\u0027procreators taiwanese antigene\u0027]\n[831,\u0027manner gatemen\u0027]\n[133,\u0027lignites rallying specters\u0027]\n[374,\u0027desolates waging reveilles\u0027]\n[1891,\u0027coterie\u0027]\n[594,\u0027ahchoo\u0027]\nNumber of results: 10\nTime taken: 22162 ms\nresult: org.apache.spark.sql.DataFrame \u003d [product_productPropertyNumeric1_bsbm: string, product_label_rdfs: string]\n"
+            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/Q1.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX rdfs: \u003chttp://www.w3.org/2000/01/rdf-schema#\u003e\nPREFIX rdf: \u003chttp://www.w3.org/1999/02/22-rdf-syntax-ns#\u003e\nPREFIX foaf: \u003chttp://xmlns.com/foaf/spec/\u003e\nPREFIX schema: \u003chttp://schema.org/\u003e\nPREFIX rev: \u003chttp://purl.org/stuff/rev#\u003e\nPREFIX edm: \u003chttp://www.europeana.eu/schemas/edm/\u003e\nPREFIX dc: \u003chttp://purl.org/dc/elements/1.1/\u003e\nPREFIX gr: \u003chttp://purl.org/goodrelations/v1#\u003e\nPREFIX dcterms: \u003chttp://purl.org/dc/terms/\u003e\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\nPREFIX bsbm: \u003chttp://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/\u003e\n\nSELECT DISTINCT ?label ?value\nWHERE {\n    ?product rdfs:label ?label .\n    ?product bsbm:productPropertyNumeric1 ?value .\n    ?product rdf:type bsbm:Product .\n    ?product bsbm:producer ?producer .\n    ?producer rdf:type bsbm:Producer .\n    ?producer foaf:homepage ?hp .\n    ?review bsbm:reviewFor ?product .\n    ?review rdf:type schema:Review .\n    ?review rev:reviewer ?pers .\n    ?pers foaf:name ?fn .\n    ?pers edm:country ?cn .\n    ?offer bsbm:product ?product .\n    ?offer rdf:type schema:Offer .\n    FILTER (?value \u003e 102)\n}\nORDER BY ?label\nLIMIT 10\n\nproduct_productPropertyNumeric1_bsbm,product_label_rdfs\n[834,\u0027vacillator mortifying\u0027]\n[1900,\u0027tither pettiness\u0027]\n[1743,\u0027resettling uncoagulated lowish\u0027]\n[940,\u0027reexhibit wrang tarts\u0027]\n[1504,\u0027procreators taiwanese antigene\u0027]\n[831,\u0027manner gatemen\u0027]\n[133,\u0027lignites rallying specters\u0027]\n[374,\u0027desolates waging reveilles\u0027]\n[1891,\u0027coterie\u0027]\n[594,\u0027ahchoo\u0027]\nNumber of results: 10\nTime taken: 2311 ms\nresult: org.apache.spark.sql.DataFrame \u003d [product_productPropertyNumeric1_bsbm: string, product_label_rdfs: string]\n"
           },
           {
             "type": "TABLE",
@@ -63,12 +63,50 @@
           }
         ]
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://05ebea32f903:4040/jobs/job?id\u003d54",
+            "http://05ebea32f903:4040/jobs/job?id\u003d55",
+            "http://05ebea32f903:4040/jobs/job?id\u003d56",
+            "http://05ebea32f903:4040/jobs/job?id\u003d57",
+            "http://05ebea32f903:4040/jobs/job?id\u003d58",
+            "http://05ebea32f903:4040/jobs/job?id\u003d59",
+            "http://05ebea32f903:4040/jobs/job?id\u003d60",
+            "http://05ebea32f903:4040/jobs/job?id\u003d61",
+            "http://05ebea32f903:4040/jobs/job?id\u003d62",
+            "http://05ebea32f903:4040/jobs/job?id\u003d63",
+            "http://05ebea32f903:4040/jobs/job?id\u003d64",
+            "http://05ebea32f903:4040/jobs/job?id\u003d65",
+            "http://05ebea32f903:4040/jobs/job?id\u003d66",
+            "http://05ebea32f903:4040/jobs/job?id\u003d67",
+            "http://05ebea32f903:4040/jobs/job?id\u003d68",
+            "http://05ebea32f903:4040/jobs/job?id\u003d69",
+            "http://05ebea32f903:4040/jobs/job?id\u003d70",
+            "http://05ebea32f903:4040/jobs/job?id\u003d71",
+            "http://05ebea32f903:4040/jobs/job?id\u003d72",
+            "http://05ebea32f903:4040/jobs/job?id\u003d73",
+            "http://05ebea32f903:4040/jobs/job?id\u003d74",
+            "http://05ebea32f903:4040/jobs/job?id\u003d75",
+            "http://05ebea32f903:4040/jobs/job?id\u003d76",
+            "http://05ebea32f903:4040/jobs/job?id\u003d77",
+            "http://05ebea32f903:4040/jobs/job?id\u003d78",
+            "http://05ebea32f903:4040/jobs/job?id\u003d79",
+            "http://05ebea32f903:4040/jobs/job?id\u003d80"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "apps": [],
       "jobName": "paragraph_1617985075751_-67143816",
       "id": "20210409-161755_1599616412",
       "dateCreated": "2021-04-09 16:17:55.751",
-      "dateStarted": "2021-04-11 16:40:53.651",
-      "dateFinished": "2021-04-11 16:41:36.833",
+      "dateStarted": "2021-04-18 14:29:03.118",
+      "dateFinished": "2021-04-18 14:29:07.333",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -148,25 +186,6 @@
             "data": "\u003cdiv class\u003d\"result-alert alert-warning\" role\u003d\"alert\"\u003e\u003cbutton type\u003d\"button\" class\u003d\"close\" data-dismiss\u003d\"alert\" aria-label\u003d\"Close\"\u003e\u003cspan aria-hidden\u003d\"true\"\u003e\u0026times;\u003c/span\u003e\u003c/button\u003e\u003cstrong\u003eOutput is truncated\u003c/strong\u003e to 102400 bytes. Learn more about \u003cstrong\u003eZEPPELIN_INTERPRETER_OUTPUT_LIMIT\u003c/strong\u003e\u003c/div\u003e"
           }
         ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d19",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d20",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d21",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d22",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d23",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d24",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d25",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d26"
-          ],
-          "interpreterSettingId": "spark"
-        }
       },
       "apps": [],
       "jobName": "paragraph_1617985097424_-2087378133",
@@ -694,36 +713,6 @@
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d0",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d1",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d2",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d3",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d4",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d5",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d6",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d7",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d8",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d9",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d10",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d11",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d12",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d13",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d14",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d15",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d16",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d17",
-            "http://767e2e0d32ac:4040/jobs/job?id\u003d18"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
       "jobName": "paragraph_1617985291315_-370642040",
       "id": "20210409-162131_428637634",
@@ -734,9 +723,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "import net.sansa_stack.query.spark.query._\n\nval queryFile \u003d \"hdfs://namenode:8020/data/queries/free_subj_pred.sparql\"\nval configFile  \u003d \"hdfs://namenode:8020/data/config_csv-only\"\nval mappingsFile \u003d \"hdfs://namenode:8020/data/mappings_csv-only.ttl\"\n\n\nval result \u003d spark.time(spark.sparqlDL(queryFile, mappingsFile, configFile))\n\nz.show(result)",
+      "text": "import net.sansa_stack.query.spark.query._\n\nval queryFile \u003d \"hdfs://namenode:8020/data/queries/S_P.sparql\"\nval configFile  \u003d \"hdfs://namenode:8020/data/config_csv-only\"\nval mappingsFile \u003d \"hdfs://namenode:8020/data/mappings_csv-only.ttl\"\n\n\nval result \u003d spark.time(spark.sparqlDL(queryFile, mappingsFile, configFile))\n\nz.show(result)",
       "user": "anonymous",
-      "dateUpdated": "2021-04-11 17:25:53.529",
+      "dateUpdated": "2021-04-18 14:28:00.937",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -803,7 +792,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/free_subj_pred.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\n\nSELECT ?subj ?pred\nWHERE {\n    ?subj ?pred \"1\"^^xsd:int.\n}\n\njava.util.NoSuchElementException: key not found: (?subj,\u003c?pred\u003e)\n  at scala.collection.MapLike$class.default(MapLike.scala:228)\n  at scala.collection.AbstractMap.default(Map.scala:59)\n  at scala.collection.mutable.HashMap.apply(HashMap.scala:65)\n  at net.sansa_stack.datalake.spark.utils.Helpers$$anonfun$getSelectColumnsFromSet$1.apply(Helpers.scala:91)\n  at net.sansa_stack.datalake.spark.utils.Helpers$$anonfun$getSelectColumnsFromSet$1.apply(Helpers.scala:83)\n  at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:99)\n  at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:99)\n  at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:230)\n  at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:40)\n  at scala.collection.mutable.HashMap.foreach(HashMap.scala:99)\n  at net.sansa_stack.datalake.spark.utils.Helpers$.getSelectColumnsFromSet(Helpers.scala:83)\n  at net.sansa_stack.datalake.spark.SparkExecutor$$anonfun$query$1.apply(SparkExecutor.scala:60)\n  at net.sansa_stack.datalake.spark.SparkExecutor$$anonfun$query$1.apply(SparkExecutor.scala:47)\n  at scala.collection.mutable.HashSet.foreach(HashSet.scala:78)\n  at net.sansa_stack.datalake.spark.SparkExecutor.query(SparkExecutor.scala:47)\n  at net.sansa_stack.datalake.spark.Run$$anonfun$application$2.apply(Run.scala:243)\n  at net.sansa_stack.datalake.spark.Run$$anonfun$application$2.apply(Run.scala:142)\n  at scala.collection.mutable.HashSet.foreach(HashSet.scala:78)\n  at net.sansa_stack.datalake.spark.Run.application(Run.scala:142)\n  at net.sansa_stack.query.spark.datalake.DataLakeEngine$.run(DataLakeEngine.scala:21)\n  at net.sansa_stack.query.spark.query.package$DataLake.sparqlDL(package.scala:112)\n  at $anonfun$1.apply(\u003cconsole\u003e:38)\n  at $anonfun$1.apply(\u003cconsole\u003e:38)\n  at org.apache.spark.sql.SparkSession.time(SparkSession.scala:676)\n  ... 58 elided\n"
+            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/S_P.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nPREFIX xsd: \u003chttp://www.w3.org/2001/XMLSchema#\u003e\n\nSELECT ?subj ?pred\nWHERE {\n    ?subj ?pred \"1\"^^xsd:int.\n}\n\njava.util.NoSuchElementException: key not found: (?subj,\u003c?pred\u003e)\n  at scala.collection.MapLike$class.default(MapLike.scala:228)\n  at scala.collection.AbstractMap.default(Map.scala:59)\n  at scala.collection.mutable.HashMap.apply(HashMap.scala:65)\n  at net.sansa_stack.datalake.spark.utils.Helpers$$anonfun$getSelectColumnsFromSet$1.apply(Helpers.scala:91)\n  at net.sansa_stack.datalake.spark.utils.Helpers$$anonfun$getSelectColumnsFromSet$1.apply(Helpers.scala:83)\n  at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:99)\n  at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:99)\n  at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:230)\n  at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:40)\n  at scala.collection.mutable.HashMap.foreach(HashMap.scala:99)\n  at net.sansa_stack.datalake.spark.utils.Helpers$.getSelectColumnsFromSet(Helpers.scala:83)\n  at net.sansa_stack.datalake.spark.SparkExecutor$$anonfun$query$1.apply(SparkExecutor.scala:60)\n  at net.sansa_stack.datalake.spark.SparkExecutor$$anonfun$query$1.apply(SparkExecutor.scala:47)\n  at scala.collection.mutable.HashSet.foreach(HashSet.scala:78)\n  at net.sansa_stack.datalake.spark.SparkExecutor.query(SparkExecutor.scala:47)\n  at net.sansa_stack.datalake.spark.Run$$anonfun$application$2.apply(Run.scala:243)\n  at net.sansa_stack.datalake.spark.Run$$anonfun$application$2.apply(Run.scala:142)\n  at scala.collection.mutable.HashSet.foreach(HashSet.scala:78)\n  at net.sansa_stack.datalake.spark.Run.application(Run.scala:142)\n  at net.sansa_stack.query.spark.datalake.DataLakeEngine$.run(DataLakeEngine.scala:21)\n  at net.sansa_stack.query.spark.query.package$DataLake.sparqlDL(package.scala:112)\n  at $anonfun$1.apply(\u003cconsole\u003e:50)\n  at $anonfun$1.apply(\u003cconsole\u003e:50)\n  at org.apache.spark.sql.SparkSession.time(SparkSession.scala:676)\n  ... 66 elided\n"
           }
         ]
       },
@@ -811,15 +800,15 @@
       "jobName": "paragraph_1617985312416_692159077",
       "id": "20210409-162152_1524333505",
       "dateCreated": "2021-04-09 16:21:52.417",
-      "dateStarted": "2021-04-11 17:25:53.588",
-      "dateFinished": "2021-04-11 17:25:54.976",
+      "dateStarted": "2021-04-18 14:28:00.977",
+      "dateFinished": "2021-04-18 14:28:02.282",
       "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "import net.sansa_stack.query.spark.query._\n\nval queryFile \u003d \"hdfs://namenode:8020/data/queries/entailment_regime.sparql\"\nval configFile  \u003d \"hdfs://namenode:8020/data/config_csv-only\"\nval mappingsFile \u003d \"hdfs://namenode:8020/data/mappings_csv-only.ttl\"\n\n\nval result \u003d spark.time(spark.sparqlDL(queryFile, mappingsFile, configFile))\n\nz.show(result)",
+      "text": "import net.sansa_stack.query.spark.query._\n\nval queryFile \u003d \"hdfs://namenode:8020/data/queries/S_P_O.sparql\"\nval configFile  \u003d \"hdfs://namenode:8020/data/config_csv-only\"\nval mappingsFile \u003d \"hdfs://namenode:8020/data/mappings_csv-only.ttl\"\n\n\nval result \u003d spark.time(spark.sparqlDL(queryFile, mappingsFile, configFile))\n\nz.show(result)",
       "user": "anonymous",
-      "dateUpdated": "2021-04-11 17:26:09.648",
+      "dateUpdated": "2021-04-18 14:28:05.545",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -836,7 +825,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/entailment_regime.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nSELECT ?s ?p ?o\nWHERE {\n    ?s ?p ?o\n}\n\njava.util.NoSuchElementException: key not found: (?s,\u003c?p\u003e)\n  at scala.collection.MapLike$class.default(MapLike.scala:228)\n  at scala.collection.AbstractMap.default(Map.scala:59)\n  at scala.collection.mutable.HashMap.apply(HashMap.scala:65)\n  at net.sansa_stack.datalake.spark.utils.Helpers$$anonfun$getSelectColumnsFromSet$1.apply(Helpers.scala:91)\n  at net.sansa_stack.datalake.spark.utils.Helpers$$anonfun$getSelectColumnsFromSet$1.apply(Helpers.scala:83)\n  at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:99)\n  at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:99)\n  at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:230)\n  at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:40)\n  at scala.collection.mutable.HashMap.foreach(HashMap.scala:99)\n  at net.sansa_stack.datalake.spark.utils.Helpers$.getSelectColumnsFromSet(Helpers.scala:83)\n  at net.sansa_stack.datalake.spark.SparkExecutor$$anonfun$query$1.apply(SparkExecutor.scala:60)\n  at net.sansa_stack.datalake.spark.SparkExecutor$$anonfun$query$1.apply(SparkExecutor.scala:47)\n  at scala.collection.mutable.HashSet.foreach(HashSet.scala:78)\n  at net.sansa_stack.datalake.spark.SparkExecutor.query(SparkExecutor.scala:47)\n  at net.sansa_stack.datalake.spark.Run$$anonfun$application$2.apply(Run.scala:243)\n  at net.sansa_stack.datalake.spark.Run$$anonfun$application$2.apply(Run.scala:142)\n  at scala.collection.mutable.HashSet.foreach(HashSet.scala:78)\n  at net.sansa_stack.datalake.spark.Run.application(Run.scala:142)\n  at net.sansa_stack.query.spark.datalake.DataLakeEngine$.run(DataLakeEngine.scala:21)\n  at net.sansa_stack.query.spark.query.package$DataLake.sparqlDL(package.scala:112)\n  at $anonfun$1.apply(\u003cconsole\u003e:41)\n  at $anonfun$1.apply(\u003cconsole\u003e:41)\n  at org.apache.spark.sql.SparkSession.time(SparkSession.scala:676)\n  ... 60 elided\n"
+            "data": "import net.sansa_stack.query.spark.query._\nqueryFile: String \u003d hdfs://namenode:8020/data/queries/S_P_O.sparql\nconfigFile: String \u003d hdfs://namenode:8020/data/config_csv-only\nmappingsFile: String \u003d hdfs://namenode:8020/data/mappings_csv-only.ttl\nGoing to execute the query:\nSELECT ?s ?p ?o\nWHERE {\n    ?s ?p ?o\n}\n\njava.util.NoSuchElementException: key not found: (?s,\u003c?p\u003e)\n  at scala.collection.MapLike$class.default(MapLike.scala:228)\n  at scala.collection.AbstractMap.default(Map.scala:59)\n  at scala.collection.mutable.HashMap.apply(HashMap.scala:65)\n  at net.sansa_stack.datalake.spark.utils.Helpers$$anonfun$getSelectColumnsFromSet$1.apply(Helpers.scala:91)\n  at net.sansa_stack.datalake.spark.utils.Helpers$$anonfun$getSelectColumnsFromSet$1.apply(Helpers.scala:83)\n  at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:99)\n  at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:99)\n  at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:230)\n  at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:40)\n  at scala.collection.mutable.HashMap.foreach(HashMap.scala:99)\n  at net.sansa_stack.datalake.spark.utils.Helpers$.getSelectColumnsFromSet(Helpers.scala:83)\n  at net.sansa_stack.datalake.spark.SparkExecutor$$anonfun$query$1.apply(SparkExecutor.scala:60)\n  at net.sansa_stack.datalake.spark.SparkExecutor$$anonfun$query$1.apply(SparkExecutor.scala:47)\n  at scala.collection.mutable.HashSet.foreach(HashSet.scala:78)\n  at net.sansa_stack.datalake.spark.SparkExecutor.query(SparkExecutor.scala:47)\n  at net.sansa_stack.datalake.spark.Run$$anonfun$application$2.apply(Run.scala:243)\n  at net.sansa_stack.datalake.spark.Run$$anonfun$application$2.apply(Run.scala:142)\n  at scala.collection.mutable.HashSet.foreach(HashSet.scala:78)\n  at net.sansa_stack.datalake.spark.Run.application(Run.scala:142)\n  at net.sansa_stack.query.spark.datalake.DataLakeEngine$.run(DataLakeEngine.scala:21)\n  at net.sansa_stack.query.spark.query.package$DataLake.sparqlDL(package.scala:112)\n  at $anonfun$1.apply(\u003cconsole\u003e:53)\n  at $anonfun$1.apply(\u003cconsole\u003e:53)\n  at org.apache.spark.sql.SparkSession.time(SparkSession.scala:676)\n  ... 68 elided\n"
           }
         ]
       },
@@ -844,8 +833,8 @@
       "jobName": "paragraph_1618063509472_235991093",
       "id": "20210410-140509_1774227238",
       "dateCreated": "2021-04-10 14:05:09.472",
-      "dateStarted": "2021-04-11 17:26:09.693",
-      "dateFinished": "2021-04-11 17:26:11.095",
+      "dateStarted": "2021-04-18 14:28:05.577",
+      "dateFinished": "2021-04-18 14:28:06.897",
       "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
