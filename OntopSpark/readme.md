@@ -1,17 +1,21 @@
 # OntopSpark performance evaluation
 
+This is a testing environment for the estimation of the query execution times of OntopSpark using a Jupyter notebook.
+
+To run the estimation, just follow the Setup and load the `OntopSpark-evaluation.ipynb` notebook in Jupyter. The average query execution times are automatically recorded by the `timeit` python library and showed in the notebook outputs.
+
 ## Setup
 
 1. Start Hive
 
   ```
-  sudo docker-compose -f docker-compose-hive.yml up
+  sudo docker-compose -f docker-compose-hive.yml up -d
   ```
 
 2. Wait Hive initialization (a couple of minutes), then start Apache Spark
 
   ```
-  sudo docker-compose -f docker-compose-spark.yml up
+  sudo docker-compose -f docker-compose-spark.yml up -d
   ```
 
 3. Load the data into HDFS
@@ -34,7 +38,7 @@
 
 5. Start OntopSpark
   ```
-  sudo docker-compose -f docker-compose-ontop.yml up
+  sudo docker-compose -f docker-compose-ontop.yml up -d
   ```
 
 6. Start Jupyter notebook
