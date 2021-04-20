@@ -12,7 +12,7 @@ Since OntopSpark needs an ontology representing the semantic structure of the da
 
 ### Evaluation
 
-The query execution times are taken from a simulation using an AWS machine with XXX vCPU and YYY memory.
+The query execution times are taken from a simulation using an AWS `t3.xlarge` machine with `4 vCPU` and `16 GB` of memory.
 
 |  | Expected output | Squerall time | OntopSpark time | Notes |
 |--|---------------|------------------|-----------------|-------|
